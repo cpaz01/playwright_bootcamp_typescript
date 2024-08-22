@@ -16,6 +16,7 @@ const emergencyContactData = {
 };
 
 const webside = ('https://opensource-demo.orangehrmlive.com/web/auth/login');
+const webside_2 = ('https://opensource-demo.orangehrmlive.com/web/auth/login');
 
 test('Update_Personal_Details', async ({ page }) => {
 
