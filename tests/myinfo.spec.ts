@@ -2,6 +2,7 @@ import { test, expect, Locator } from '@playwright/test';
 import LoginPage from '../pages/login';
 import MyInfoPage from '../pages/myinfo';
 import EmergencyContacs from '../pages/emergencycontacts';
+import path from 'path';
 
 
 test.describe('My Info Page', () => {
@@ -27,14 +28,16 @@ test.describe('My Info Page', () => {
 
 test('Update personal details', async ({ page }) => {
     
-    await myInfoPage.fillPersonalData();
+    await myInfoPage.fillPersonalData('Gillian', 'Leigh', 'Anderson');
+
+    await page.waitForLoadState('networkidle');
 
     await myInfoPage.saveBtn.click();
 
-    await expect(myInfoPage.employeeFullName).toBeVisible();
+    await page.waitForLoadState('networkidle');
 
     await page.screenshot({ path: 'personaldetails.png' });
-
+    
 })
 
 test('Add emergency contact', async ({ page }) => {
@@ -56,5 +59,17 @@ test('Add emergency contact', async ({ page }) => {
     await expect(page.locator('#oxd-toaster_1')).toBeVisible();
 
     await page.screenshot({ path: 'newcontactcreated.png' });
+})
+
+test('Upload a File', async ({ page }) => {
+
+    await myInfoPage.addAttachmentBtn.click();
+
+    await myInfoPage.fileInputLocator.setInputFiles(path.join(__dirname, 'Testing document.docx'));
+
+    await myInfoPage.saveAttachmentBtn.click();
+
+    await myInfoPage.verifySuccessDialog();
+
 })
 })
