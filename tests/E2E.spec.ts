@@ -1,7 +1,7 @@
 import { test } from '@playwright/test';
-import { LoginPage } from '/LuciRepo/playwright_bootcamp_typescript-2/playwright_bootcamp_typescript/pages/LoginPage.spec';
-import { MyInfoPage } from '/LuciRepo/playwright_bootcamp_typescript-2/playwright_bootcamp_typescript/pages/MyInfoPage.spec';
-import data from '/LuciRepo/playwright_bootcamp_typescript-2/playwright_bootcamp_typescript/data/data.json';
+import { LoginPage } from '/Playwright Bootcamp/pages/MyInfoPage.spec';
+import { MyInfoPage } from '/Playwright Bootcamp/pages/MyInfoPage.spec';
+import data from '/Playwright Bootcamp/data/data.json';
 
 //import { beforeEach } from 'node:test';
 

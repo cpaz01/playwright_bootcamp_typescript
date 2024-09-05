@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+      "target": "es5",                           // Especifica la versión objetivo de ECMAScript para el código compilado
+      "module": "commonjs",                      // Especifica el sistema de módulos
+      "strict": true,                            // Habilita todas las opciones estrictas de tipo
+      "esModuleInterop": true,                   // Permite la interoperabilidad de exportación/importación por defecto con módulos CommonJS/AMD/UMD
+      "resolveJsonModule": true,                 // Permite la importación de módulos JSON
+      "outDir": "./dist",                        // Especifica el directorio de salida para los archivos compilados
+      "baseUrl": "./",                           // Especifica la base del directorio para la resolución de módulos no relativos
+      "paths": {                                 // Especifica una serie de entradas que reasignan las importaciones a ubicaciones de búsqueda
+        "*": ["node_modules/*", "src/types/*"]
+      },
+      "lib": ["es2015", "dom"],                  // Especifica una lista de bibliotecas de declaración de archivos incluidos en la compilación
+      "sourceMap": true                          // Genera archivos .map correspondientes para los archivos .js resultantes
+    },
+    "include": [
+      "src/**/*"                                 // Especifica una lista de archivos o patrones para incluir en el programa
+    ],
+    "exclude": [
+      "node_modules",                            // Especifica una lista de archivos o patrones para excluir del programa
+      "**/*.spec.ts"
+    ]
+  }
+  

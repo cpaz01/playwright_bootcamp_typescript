@@ -8,6 +8,8 @@ export class LoginPage {
   readonly passwordInput: string = 'input[name="password"]';
   readonly submitButton: string = 'button[type="submit"]';
 
+
+  
   constructor(page: Page) {
     this.page = page;
   }

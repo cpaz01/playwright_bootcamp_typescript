@@ -12,6 +12,8 @@ export class MyInfoPage {
   private relationshipInputXPath: string = '//label[text()="Relationship"]/ancestor::div/following-sibling::div//input';
   private homeTelephoneInputXPath: string = '//label[text()="Home Telephone"]/ancestor::div/following-sibling::div//input';
 
+
+  
   constructor(page: Page) {
     this.page = page;
   }
